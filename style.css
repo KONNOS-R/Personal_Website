@@ -1,0 +1,14 @@
+header {
+    background: black;
+    padding: 25px;
+}
+
+h1 {
+    color: #efefef;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 12vw;
+    line-height: 0.9;
+    margin: 0;
+    text-align: center;
+}
