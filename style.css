@@ -13,20 +13,60 @@ h1 {
     text-align: center;
 }
 
-.nav { 
-    margin-top: 10px;
+body {
+    margin: 0;
+    background: white;
+    font-family: 'Sora', sans-serif;
+}
+:root {
+    --bg-color: white;
+    --accent: #ffffff;
+}
+
+.content {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outer-container {
+    width: 85%;
+    margin-top: 15px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+.nav {
+    display: flex;
 }
 
 .nav_card {
+    width: 50%;
+    padding: 1.2rem;
+    border: none;
+    cursor: pointer;
+
     background: white;
-    max-width: 200px;
-    padding: 1.25rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-weight: 600;
+    font-size: 1rem;
+
+    transition: 0.25s ease;
+}
+
+.nav_card.left {
+    border-top-left-radius: 18px;
+}
+
+.nav_card.right {
+    border-top-right-radius: 18px;
+}
+
+.nav_card.active {
+    color: black;
+}
+
+.hero {
+    padding: 2rem;
 }

@@ -18,17 +18,68 @@
             <h1>KON/NOS R</h1>
         </header>
 
-        <div class="nav">
-            <div class="nav_card">photography</div>
-            <div class="nav_card">computer science</div>
-        </div>
-
-
-        <div class="hero">
+        <div class="content">
+            <div class="outer-container" id="container">
             
+                <div class="nav">
+                    <button id="photoBtn" class="nav_card left" onclick="setHero('photo')">
+                        photography
+                    </button>
+                
+                    <button id="csBtn" class="nav_card right" onclick="setHero('cs')">
+                        computer science
+                    </button>
+                </div>
+            
+                <div class="hero" id="hero">
+                    <h2>Welcome</h2>
+                </div>
+            </div>
         </div>
 
 
+        <script>
+        function setHero(section) {
+            const hero = document.getElementById("hero");
+            const container = document.getElementById("container");
+        
+            const photoBtn = document.getElementById("photoBtn");
+            const csBtn = document.getElementById("csBtn");
+        
+            photoBtn.classList.remove("active");
+            csBtn.classList.remove("active");
+        
+            if (section === "photo") {
+                container.style.background = "#bff6fa"; // cyan card
+            
+                photoBtn.classList.add("active");
+                photoBtn.style.background = "#bff6fa";
+                csBtn.style.background = "white";
+            
+                hero.innerHTML = `
+                    <h2>Photography</h2>
+                    <p>Visual work, light, and creative experiments.</p>
+                `;
+            }
+        
+            if (section === "cs") {
+                container.style.background = "#ffe0c2"; // orange card
+            
+                csBtn.classList.add("active");
+                csBtn.style.background = "#ffe0c2";
+                photoBtn.style.background = "white";
+            
+                hero.innerHTML = `
+                    <h2>Computer Science</h2>
+                    <p>Projects, algorithms, and software development.</p>
+                `;
+            }
+        }
+
+        window.onload = function () {
+            setHero("cs");
+        };
+        </script>
 
     </body>
 </html>
