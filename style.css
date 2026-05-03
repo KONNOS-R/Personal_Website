@@ -1,3 +1,15 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+ 
 header {
     background: #12001e;
     padding: 25px;
@@ -13,17 +25,6 @@ h1 {
     text-align: center;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    margin: 0;
-    font-family: 'Sora', sans-serif;
-    display: flex;
-    flex-direction: column;
-}
 :root {
     --bg-color: white;
     --accent: #fff;
@@ -39,8 +40,9 @@ body {
 
 .test{
     color: #76bfff;
+    color: #dbedff;
     color: #6b145a;
-    color: #f8f0ff;
+    color: #eddbff;
 }
 
 
@@ -77,8 +79,8 @@ body {
     border-top-right-radius: 18px;
 }
 
-.nav_card.active {
-    color: black;
+.nav_card:not(.active):hover {
+    filter: brightness(0.9);
 }
 
 .hero {
@@ -90,4 +92,20 @@ body {
 
 .hero.fade-out {
     opacity: 0;
+}
+
+.hero-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    transition: 0.2s ease;
+}
+
+.hero-link:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+    transform: translateY(-1px);
 }

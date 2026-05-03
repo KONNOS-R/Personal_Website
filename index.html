@@ -36,7 +36,7 @@
             </div>
         </div>
 
-
+        
         <script>
         function setHero(section) {
             const hero = document.getElementById("hero");
@@ -50,37 +50,46 @@
         
             let heroTitle = "";
             let heroText = "";
+            let heroLink = "";
             let cardColor = "";
             let heroColor = "";
+            let linkBg = "";
+            let linkColor = "";
         
             if (section === "photo") {
                 cardColor = "#76bfff";
                 heroColor = "#000";
+                linkBg = "#dbedff";
+                linkColor = "#000";
             
                 photoBtn.classList.add("active");
                 photoBtn.style.background = "#76bfff";
                 photoBtn.style.color = "#000";
             
-                csBtn.style.background = "#f8f0ff";
+                csBtn.style.background = "#dbedff";
                 csBtn.style.color = "#000";
             
                 heroTitle = "Photography";
                 heroText = "Visual work, light, and creative experiments.";
+                heroLink = "photography.html";
             }
         
             if (section === "cs") {
                 cardColor = "#6b145a";
                 heroColor = "#fff";
+                linkBg = "#eddbff";
+                linkColor = "#000";
             
                 csBtn.classList.add("active");
                 csBtn.style.background = "#6b145a";
                 csBtn.style.color = "#fff";
             
-                photoBtn.style.background = "#f8f0ff";
+                photoBtn.style.background = "#eddbff";
                 photoBtn.style.color = "#000";
             
                 heroTitle = "Computer Science";
                 heroText = "Projects, algorithms, and software development.";
+                heroLink = "computer-science.html";
             }
         
             container.style.background = cardColor;
@@ -91,9 +100,15 @@
                 hero.innerHTML = `
                     <h2>${heroTitle}</h2>
                     <p>${heroText}</p>
+                    <a class="hero-link" href="${heroLink}">View more</a>
                 `;
             
                 hero.style.color = heroColor;
+            
+                const link = hero.querySelector(".hero-link");
+                link.style.background = linkBg;
+                link.style.color = linkColor;
+            
                 hero.classList.remove("fade-out");
             }, 180);
         }
