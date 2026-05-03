@@ -26,7 +26,7 @@ body {
 }
 :root {
     --bg-color: white;
-    --accent: #ffffff;
+    --accent: #fff;
 }
 
 .content {
@@ -37,10 +37,16 @@ body {
     align-items: center;
 }
 
+.test{
+    color: #76bfff;
+    color: #6b145a;
+    color: #f8f0ff;
+}
+
+
 .outer-container {
     width: 95%;
     margin-top: 15px;
-    background: white;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,0,0,0.25);
@@ -78,4 +84,10 @@ body {
 .hero {
     text-align: center;
     padding: 2rem;
+    transition: opacity 0.2s ease, color 0.25s ease;
+    opacity: 1;
+}
+
+.hero.fade-out {
+    opacity: 0;
 }

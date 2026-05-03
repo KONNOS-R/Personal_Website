@@ -23,16 +23,15 @@
             
                 <div class="nav">
                     <button id="photoBtn" class="nav_card left" onclick="setHero('photo')">
-                        photography
+                        Photography
                     </button>
                 
                     <button id="csBtn" class="nav_card right" onclick="setHero('cs')">
-                        computer science
+                        Computer Science
                     </button>
                 </div>
             
                 <div class="hero" id="hero">
-                    <h2>Welcome</h2>
                 </div>
             </div>
         </div>
@@ -49,31 +48,54 @@
             photoBtn.classList.remove("active");
             csBtn.classList.remove("active");
         
+            let heroTitle = "";
+            let heroText = "";
+            let cardColor = "";
+            let heroColor = "";
+        
             if (section === "photo") {
-                container.style.background = "#bff6fa"; // cyan card
+                cardColor = "#76bfff";
+                heroColor = "#000";
             
                 photoBtn.classList.add("active");
-                photoBtn.style.background = "#bff6fa";
-                csBtn.style.background = "white";
+                photoBtn.style.background = "#76bfff";
+                photoBtn.style.color = "#000";
             
-                hero.innerHTML = `
-                    <h2>Photography</h2>
-                    <p>Visual work, light, and creative experiments.</p>
-                `;
+                csBtn.style.background = "#f8f0ff";
+                csBtn.style.color = "#000";
+            
+                heroTitle = "Photography";
+                heroText = "Visual work, light, and creative experiments.";
             }
         
             if (section === "cs") {
-                container.style.background = "#ffe0c2"; // orange card
+                cardColor = "#6b145a";
+                heroColor = "#fff";
             
                 csBtn.classList.add("active");
-                csBtn.style.background = "#ffe0c2";
-                photoBtn.style.background = "white";
+                csBtn.style.background = "#6b145a";
+                csBtn.style.color = "#fff";
             
-                hero.innerHTML = `
-                    <h2>Computer Science</h2>
-                    <p>Projects, algorithms, and software development.</p>
-                `;
+                photoBtn.style.background = "#f8f0ff";
+                photoBtn.style.color = "#000";
+            
+                heroTitle = "Computer Science";
+                heroText = "Projects, algorithms, and software development.";
             }
+        
+            container.style.background = cardColor;
+        
+            hero.classList.add("fade-out");
+        
+            setTimeout(() => {
+                hero.innerHTML = `
+                    <h2>${heroTitle}</h2>
+                    <p>${heroText}</p>
+                `;
+            
+                hero.style.color = heroColor;
+                hero.classList.remove("fade-out");
+            }, 180);
         }
 
         window.onload = function () {
