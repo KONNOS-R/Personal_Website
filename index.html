@@ -37,7 +37,7 @@
         </div>
 
         <footer>
-            
+
         </footer>
 
         
@@ -74,6 +74,7 @@
                 photoBtn.style.color = "#000";
             
                 heroTitle = "Computer Science";
+                heroImage = "images/computer-science.jpg"
                 heroText = "Projects, algorithms, and software development.";
                 heroLink = "computer-science.html";
             }
@@ -92,6 +93,7 @@
                 csBtn.style.color = "#000";
             
                 heroTitle = "Photography";
+                heroImage = "images/photography.jpg"
                 heroText = "Visual work, light, and creative experiments.";
                 heroLink = "photography.html";
             }
@@ -102,9 +104,13 @@
         
             setTimeout(() => {
                 hero.innerHTML = `
-                    <h2>${heroTitle}</h2>
-                    <p>${heroText}</p>
-                    <a class="hero-link" href="${heroLink}">View more</a>
+                    <img class="hero-image" src="${heroImage}" alt="${heroTitle}">
+
+                    <div class="hero-text">
+                        <h2>${heroTitle}</h2>
+                        <p>${heroText}</p>
+                        <a class="hero-link" href="${heroLink}">View more</a>
+                    </div>
                 `;
             
                 hero.style.color = heroColor;

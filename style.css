@@ -1,5 +1,4 @@
-/* main elements */
-
+/* MAIN ELEMENTS */
 html, body {
     height: 100%;
     margin: 0;
@@ -17,8 +16,16 @@ header {
     padding: 25px;
 }
 
+/* SHARED */
+.content {
+    flex: 1;
+    background: linear-gradient(180deg, #12001e 0%, #3c0064 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-/* titles */
+/* TITLES */
 .home_title, .subpages_title {
     color: #3c0064;
     font-family: 'Sora', sans-serif;
@@ -48,15 +55,7 @@ header {
     animation: colorFill 1s ease forwards;
 }
 
-/* idk */
-.content {
-    flex: 1;
-    background: linear-gradient(180deg, #12001e 0%, #3c0064 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* HOME */
 .outer-container {
     width: 95%;
     margin-top: 15px;
@@ -91,14 +90,35 @@ header {
 }
 
 .hero {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
     padding: 2rem;
+    text-align: left;
+
     transition: opacity 0.2s ease, color 0.25s ease;
     opacity: 1;
 }
 
 .hero.fade-out {
     opacity: 0;
+}
+
+.hero-image {
+    width: 42%;
+    min-width: 220px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h2 {
+    margin-top: 0;
 }
 
 .hero-link {
@@ -118,7 +138,22 @@ header {
 
 
 
-/* animations */
+
+
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+}
+
+
+
+/* ANIMATIONS */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -138,6 +173,7 @@ header {
         background-position: 0 0;
     }
 }
+
 
 
 
