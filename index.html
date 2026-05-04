@@ -15,26 +15,30 @@
 
     <body>
         <header>
-            <h1>KON/NOS R</h1>
+            <h1 class="home_title">KON/NOS R</h1>
         </header>
 
         <div class="content">
             <div class="outer-container" id="container">
             
                 <div class="nav">
-                    <button id="photoBtn" class="nav_card left" onclick="setHero('photo')">
-                        Photography
-                    </button>
-                
                     <button id="csBtn" class="nav_card right" onclick="setHero('cs')">
                         Computer Science
-                    </button>
+                    </button> <!-- Computer Science Button -->
+
+                    <button id="photoBtn" class="nav_card left" onclick="setHero('photo')">
+                        Photography
+                    </button> <!-- Photography Button -->
                 </div>
             
                 <div class="hero" id="hero">
                 </div>
             </div>
         </div>
+
+        <footer>
+            
+        </footer>
 
         
         <script>
@@ -55,26 +59,8 @@
             let heroColor = "";
             let linkBg = "";
             let linkColor = "";
-        
-            if (section === "photo") {
-                cardColor = "#76bfff";
-                heroColor = "#000";
-                linkBg = "#dbedff";
-                linkColor = "#000";
-            
-                photoBtn.classList.add("active");
-                photoBtn.style.background = "#76bfff";
-                photoBtn.style.color = "#000";
-            
-                csBtn.style.background = "#dbedff";
-                csBtn.style.color = "#000";
-            
-                heroTitle = "Photography";
-                heroText = "Visual work, light, and creative experiments.";
-                heroLink = "photography.html";
-            }
-        
-            if (section === "cs") {
+
+            if (section === "cs") { // Computer Science Card
                 cardColor = "#6b145a";
                 heroColor = "#fff";
                 linkBg = "#eddbff";
@@ -90,6 +76,24 @@
                 heroTitle = "Computer Science";
                 heroText = "Projects, algorithms, and software development.";
                 heroLink = "computer-science.html";
+            }
+        
+            if (section === "photo") { // Photography Card
+                cardColor = "#76bfff";
+                heroColor = "#000";
+                linkBg = "#dbedff";
+                linkColor = "#000";
+            
+                photoBtn.classList.add("active");
+                photoBtn.style.background = "#76bfff";
+                photoBtn.style.color = "#000";
+            
+                csBtn.style.background = "#dbedff";
+                csBtn.style.color = "#000";
+            
+                heroTitle = "Photography";
+                heroText = "Visual work, light, and creative experiments.";
+                heroLink = "photography.html";
             }
         
             container.style.background = cardColor;
