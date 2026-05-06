@@ -15,9 +15,9 @@
 
     <body>
         <header>
-            <a href="index.html" class="subpages_title">
-                <h1 class="subpages_title">KON/NOS R</h1>
-            </a>
+            <h1 class="subpages_title">
+                <a href="index.html">KON/NOS R</a>
+            </h1>
         </header>
 
         <div class="content">
@@ -35,14 +35,43 @@
             </div>
             <div class="ph_card">
                 <h2>Gallery</h2>
-                <p>
-                    coming soon!
-                </p>
+                <div class="gallery-grid">
+                    <img class="gallery-item" src="images/Gallery/photo1.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo2.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo3.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo4.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo5.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo6.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo1.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo2.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo3.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo4.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo5.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo6.jpg" alt="photo">
+                </div>
             </div>
         </div>
 
         <footer>
             <a href="index.html">Back to Home Page</a>
         </footer>
+
+
+<script>
+function resizeGallery() {
+    const gallery = document.querySelector(".gallery-grid");
+    const rowHeight = parseFloat(getComputedStyle(gallery).gridAutoRows);
+    const gap = parseFloat(getComputedStyle(gallery).gap);
+
+    document.querySelectorAll(".gallery-item").forEach(img => {
+        const height = img.getBoundingClientRect().height;
+        const span = Math.round((height + gap) / (rowHeight + gap));
+        img.style.gridRowEnd = `span ${span}`;
+    });
+}
+
+window.addEventListener("load", resizeGallery);
+window.addEventListener("resize", resizeGallery);
+</script>
     </body>
 </html>
