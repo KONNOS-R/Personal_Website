@@ -14,14 +14,19 @@
     </head>
 
     <body>
-        <header>
-            <h1 class="subpages_title">
+        <header class="subpage-header">
+            <h1 class="subpage-title">
                 <a href="index.html">KON/NOS R</a>
             </h1>
+
+            <nav class="subpage-nav">
+                <a href="#bio">Bio</a>
+                <a href="#gallery">Gallery</a>
+            </nav>
         </header>
 
         <div class="content">
-            <div class="ph_card">
+            <div class="ph-card" id="bio">
                 <h2>Bio</h2>
                 <p>
                     Hello! I am a wildlife and nature photographer based in Greece. 
@@ -33,7 +38,7 @@
                 </p>
                 <a href="https://www.instagram.com/meowmeowcar_photography/" target="_blank">Instagram</a>
             </div>
-            <div class="ph_card">
+            <div class="ph-card" id="gallery">
                 <h2>Gallery</h2>
                 <div class="gallery-grid">
                     <img class="gallery-item" src="images/Gallery/photo1.jpg" alt="photo">
@@ -57,21 +62,31 @@
         </footer>
 
 
-<script>
-function resizeGallery() {
-    const gallery = document.querySelector(".gallery-grid");
-    const rowHeight = parseFloat(getComputedStyle(gallery).gridAutoRows);
-    const gap = parseFloat(getComputedStyle(gallery).gap);
-
-    document.querySelectorAll(".gallery-item").forEach(img => {
-        const height = img.getBoundingClientRect().height;
-        const span = Math.round((height + gap) / (rowHeight + gap));
-        img.style.gridRowEnd = `span ${span}`;
-    });
-}
-
-window.addEventListener("load", resizeGallery);
-window.addEventListener("resize", resizeGallery);
-</script>
+        <script>
+        function resizeGallery() {
+            const gallery = document.querySelector(".gallery-grid");
+            const rowHeight = parseFloat(getComputedStyle(gallery).gridAutoRows);
+            const gap = parseFloat(getComputedStyle(gallery).gap);
+        
+            document.querySelectorAll(".gallery-item").forEach(img => {
+                const height = img.getBoundingClientRect().height;
+                const span = Math.round((height + gap) / (rowHeight + gap));
+                img.style.gridRowEnd = `span ${span}`;
+            });
+        }
+        
+        window.addEventListener("load", resizeGallery);
+        window.addEventListener("resize", resizeGallery);
+        
+        
+        const header = document.querySelector(".subpage-header");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+        </script>
     </body>
 </html>

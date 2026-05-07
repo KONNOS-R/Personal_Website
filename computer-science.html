@@ -14,14 +14,19 @@
     </head>
 
     <body>
-        <header>
-            <h1 class="subpages_title">
+        <header class="subpage-header">
+            <h1 class="subpage-title">
                 <a href="index.html">KON/NOS R</a>
             </h1>
+
+            <nav class="subpage-nav">
+                <a href="#bio">Bio</a>
+                <a href="#skills">Skills</a>
+            </nav>
         </header>
 
         <div class="content">
-            <div class="cs_card">
+            <div class="cs-card" id="bio">
                 <h2>Bio</h2>
                 <p>
                     Hello! I’m a computer science student from Greece.
@@ -35,7 +40,7 @@
                 <a href="https://github.com/KONNOS-R" target="_blank">GitHub</a>
             </div>
 
-            <div class="cs_card">
+            <div class="cs-card" id="skills">
                 <h2>Skills</h2>
 
                 <h3>Programming</h3>
@@ -76,5 +81,18 @@
         <footer>
             <a href="index.html">Back to Home Page</a>
         </footer>
+
+
+        <script>
+        const header = document.querySelector(".subpage-header");
+                
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+        </script>
     </body>
 </html>
