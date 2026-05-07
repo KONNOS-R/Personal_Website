@@ -20,8 +20,9 @@
             </h1>
 
             <nav class="subpage-nav">
-                <a href="#bio">Bio</a>
-                <a href="#skills">Skills</a>
+                <a href="#bio" class="subpage-nav-item">Bio</a>
+                <a href="#skills" class="subpage-nav-item">Skills</a>
+                <a href="#projects" class="subpage-nav-item">Projects</a>
             </nav>
         </header>
 
@@ -32,7 +33,7 @@
                     Hello! I’m a computer science student from Greece.
                     I am interested in software development and hardware projects.
                     My current focus includes python programming and web development!
-                    I’m also interested in lower-level programming and plan to start learning C in the near future.
+                    I’m also interested in lower-level programming and plan to lean C in the near future.
                 </p>
                 <p>
                     Personal accounts:
@@ -64,6 +65,10 @@
                         <strong>JavaScript</strong>
                         <small>Beginner</small>
                     </span>
+                    <span>
+                        <strong>SQL</strong>
+                        <small>Beginner</small>
+                    </span>
                 </div>
 
                 <h3>Other Skills</h3>
@@ -76,6 +81,10 @@
                     </span>
                 </div>
             </div>
+
+            <div class="cs-card" id="projects">
+                <h2>Projects</h2>
+            </div>
         </div>
 
         <footer>
@@ -85,12 +94,22 @@
 
         <script>
         const header = document.querySelector(".subpage-header");
+        const navItems = document.querySelectorAll(".subpage-nav-item");
                 
         window.addEventListener("scroll", () => {
             if (window.scrollY > 10) {
                 header.classList.add("scrolled");
+            
+                navItems.forEach(item => {
+                    item.classList.add("scrolled");
+                });
+            
             } else {
                 header.classList.remove("scrolled");
+            
+                navItems.forEach(item => {
+                    item.classList.remove("scrolled");
+                });
             }
         });
         </script>

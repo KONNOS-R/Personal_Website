@@ -67,17 +67,17 @@ footer a {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-}
 
-.subpage-header {
-    transition: background 0.25s ease, box-shadow 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .subpage-header.scrolled {
     padding: 18px 25px;
     background: rgba(18, 0, 30, 0.85);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(237, 219, 255, 0.12);
 }
 
 .subpage-title {
@@ -106,21 +106,29 @@ footer a {
     gap: 0.5rem;
 }
 
-.subpage-nav a {
+.subpage-nav-item {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.45rem 0.9rem;
     border-radius: 999px;
-
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-
     color: #eddbff;
     background: rgba(237, 219, 255, 0.08);
+    line-height: 1;
+    cursor: pointer;
 
-    transition: 0.2s ease;
+    transition: 0.25s ease;
 }
 
-.subpage-nav a:hover {
+.subpage-nav-item.scrolled {
+    border: 1px solid rgba(237, 219, 255, 0.10);
+}
+
+.subpage-nav-item:hover {
+    border-radius: 999px;
     background: rgba(237, 219, 255, 0.18);
 }
 
@@ -146,7 +154,6 @@ footer a {
     padding: 1.2rem;
     border: none;
     cursor: pointer;
-
     background: white;
     font-weight: 600;
     font-size: 1rem;
@@ -242,7 +249,7 @@ footer a {
     transform: translateX(-50%);
     text-align: center;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     padding-bottom: 0.8rem;
 }
 
@@ -278,18 +285,7 @@ footer a {
     filter: brightness(0.92);
 }
 
-
-/* cs */
-.cs-card {
-    background: #eddbff;
-}
-
-.cs-card a {
-    color: #fff;
-    background-color: #6b145a;
-}
-
-.cs-card h3 {
+.cs-card h3, .ph-card h3 {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
@@ -297,14 +293,14 @@ footer a {
     font-weight: 700;
 }
 
-.skill-list {
+.skill-list, .gear-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
     justify-content: center;
 }
 
-.skill-list span {
+.skill-list span, .gear-list span {
     min-width: 120px;
     padding: 0.8rem 1rem;
     display: flex;
@@ -316,19 +312,30 @@ footer a {
     box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
 
-.skill-list span:hover {
+.skill-list span:hover, .gear-list span:hover {
     transform: translateY(-2px);
 }
 
-.skill-list strong {
+.skill-list strong, .gear-list strong {
     font-size: 0.95rem;
     font-weight: 700;
 }
 
-.skill-list span small {
+.skill-list small, .gear-list small {
     font-size: 0.78rem;
     opacity: 0.7;
     font-weight: 600;
+}
+
+
+/* cs */
+.cs-card {
+    background: #eddbff;
+}
+
+.cs-card a {
+    color: #fff;
+    background-color: #6b145a;
 }
 
 
@@ -340,6 +347,27 @@ footer a {
 .ph-card a {
     color: #000;
     background-color: #76bfff;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.featured-item {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.featured-item:hover {
+    z-index: 9;
+    transform: scale(1.15);
 }
 
 .gallery-grid {
