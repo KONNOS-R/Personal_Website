@@ -51,9 +51,11 @@
                     <span>
                         <strong>Canon EOS 2000D</strong>
                     </span>
+
                     <span>
                         <strong>Canon PowerShot G5 X</strong>
                     </span>
+
                     <span>
                         <strong>Canon Legria HF G40</strong>
                     </span>
@@ -64,12 +66,15 @@
                     <span>
                         <strong>EF 600mm f/4L IS USM</strong>
                     </span>
+
                     <span>
                         <strong>EF 70-200mm f/4L IS USM</strong>
                     </span>
+
                     <span>
                         <strong>EF 50mm f/1.8 STM</strong>
                     </span>
+
                     <span>
                         <strong>Sigma 105mm f/2.8 EX DG Macro OS HSM</strong>
                     </span>
@@ -80,10 +85,12 @@
                     <span>
                         <strong>KF09.117 Tripod</strong>
                     </span>
+
                     <span>
                         <strong>KF31.052 Gimbal Head</strong>
                     </span>
                 </div>
+
                 <h3>Other</h3>
                 <div class="gear-list">
                     <span>
@@ -94,6 +101,7 @@
 
             <div class="ph-card" id="gallery">
                 <h2>Gallery</h2>
+
                 <div class="gallery-grid">
                     <img class="gallery-item" src="images/Gallery/photo1.jpg" alt="photo">
                     <img class="gallery-item" src="images/Gallery/photo2.jpg" alt="photo">
@@ -101,10 +109,15 @@
                     <img class="gallery-item" src="images/Gallery/photo4.jpg" alt="photo">
                     <img class="gallery-item" src="images/Gallery/photo5.jpg" alt="photo">
                     <img class="gallery-item" src="images/Gallery/photo6.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo7.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo8.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo9.jpg" alt="photo">
+                    <img class="gallery-item" src="images/Gallery/photo10.jpg" alt="photo">
                 </div>
+
                 <h3>More on</h3>
                 <div class="links-list">
-                <a href="https://www.instagram.com/meowmeowcar_photography/" target="_blank">Instagram</a>
+                    <a href="https://www.instagram.com/meowmeowcar_photography/" target="_blank">Instagram</a>
                 </div>
             </div>
         </div>
@@ -115,19 +128,35 @@
 
 
         <script>
+        function shuffleGallery() {
+            const gallery = document.querySelector(".gallery-grid");
+            const items = Array.from(gallery.querySelectorAll(".gallery-item"));
+        
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+        
+            items.forEach(item => gallery.appendChild(item));
+        }
+        
         function resizeGallery() {
             const gallery = document.querySelector(".gallery-grid");
             const rowHeight = parseFloat(getComputedStyle(gallery).gridAutoRows);
             const gap = parseFloat(getComputedStyle(gallery).gap);
         
-            document.querySelectorAll(".gallery-item").forEach(img => {
+            gallery.querySelectorAll(".gallery-item").forEach(img => {
                 const height = img.getBoundingClientRect().height;
                 const span = Math.round((height + gap) / (rowHeight + gap));
                 img.style.gridRowEnd = `span ${span}`;
             });
         }
         
-        window.addEventListener("load", resizeGallery);
+        window.addEventListener("load", () => {
+            shuffleGallery();
+            resizeGallery();
+        });
+        
         window.addEventListener("resize", resizeGallery);
         
         
