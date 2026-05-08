@@ -17,11 +17,11 @@ header {
 }
 
 footer {
+    text-align: center;
     background-color: #3c0064;
 }
 
 footer a {
-    padding-left: 5px;
     color: #12001e;
     text-decoration: none;
 }
@@ -265,7 +265,7 @@ footer a {
 }
 
 .cs-card, .ph-card {
-        margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0.7rem;
 }
 
@@ -279,7 +279,6 @@ footer a {
 .ph-card a, .cs-card a {
     display: inline-block;
     width: fit-content;
-    margin-top: 1rem;
     padding: 0.8rem 1.2rem;
     border-radius: 10px;
     text-decoration: none;
@@ -294,8 +293,7 @@ footer a {
 
 .cs-card h3, .ph-card h3 {
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     font-size: 1rem;
     font-weight: 700;
 }
@@ -355,11 +353,21 @@ footer a {
     margin-top: 1rem;
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
 .project-card {
-    padding: 1.25rem;
+    padding: 0.2rem 1rem 1rem 1rem;
     border-radius: 14px;
-    background: rgba(107, 20, 90, 0.08);
+    background-color: #6b145a25;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -369,15 +377,18 @@ footer a {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
-.project-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+.project-card img {
+    width: 100%;
+    max-width: 320px;
+    max-height: 180px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: auto 0;
 }
 
-.project-card p {
-    text-align: center;
-    margin: 0;
-    line-height: 1.5;
+.project-card a {
+    margin-top: 1rem;
 }
 
 @media (max-width: 900px) {
