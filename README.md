@@ -4,6 +4,7 @@ A personal portfolio website showcasing my **computer science** and **photograph
 
 ## About
 
+![alt text](readme.png)
 This website serves as a central place for my projects, interests, and creative work.
 
 It currently includes:
